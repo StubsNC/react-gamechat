@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Auth } from "./Auth";
 import {  Row, Col } from 'react-bootstrap';
-import { Container } from "../../globalStyles";
+import { Container, Button } from "../../globalStyles";
 
 
 
@@ -28,19 +28,19 @@ function Room() {
       {room ? (
         <ChatRoom room={room} />
       ) : (
-        <Container className="p-5 bg-light">
-          <div className="container border border-primary border-3 rounded p-2">
-            <Row className="font-weight-bold text-justify p-2 align-items-center">
-              <Col xs={4}>
-                <label className="mr-2">Enter Room Name:</label>
+        <Container >
+          <div>
+            <Row>
+              <Col>
+                <label>Enter Room Name:</label>
               </Col>
               <Col xs={8}>
-                <div className="input-group">
-                  <input type="text" className="form-control" ref={roomInputRef} />
-                  <div className="input-group-append">
-                    <button className="btn btn-primary" type="button" onClick={() => setRoom(roomInputRef.current.value)}>
+                <div >
+                  <input type="text" ref={roomInputRef} />
+                  <div >
+                    <Button type="button" onClick={() => setRoom(roomInputRef.current.value)}>
                       Enter Chat
-                    </button>
+                    </Button>
                   </div>
                 </div>
               </Col>
