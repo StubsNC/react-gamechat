@@ -37,25 +37,6 @@ const ChatRoom = (props) => {
         return () => unsubscribe();
     }, [room])
 
-    useEffect(() => {
-        const videosQuery = query(
-            videoRef,
-            // orderBy("createdAt", "desc"),
-            // limitToLast(20)
-        );
-        const unsubscribe = onSnapshot(videosQuery, (snapshot) => {
-            let videoUrls = [];
-            let gamertags = [];
-            snapshot.forEach((doc) => {
-                videoUrls.push({ ...doc.data().public_url, id: doc.id });
-                // gamertags.push(doc.data().gamertag);
-            });
-            setVideos(videoUrls);
-            setGamertags(gamertags);
-            console.log(gamertags)
-        });
-        return () => unsubscribe();
-    }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault()

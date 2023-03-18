@@ -41,7 +41,7 @@ function Footer() {
           <Button fontBig>Subscribe</Button>
         </Form>
       </FooterSubscription>
-      <FooterLinksContainer>
+      {/* <FooterLinksContainer>
         <FooterLinksWrapper>
           <FooterLinkItems>
             <FooterLinkTitle>About Us</FooterLinkTitle>
@@ -75,7 +75,7 @@ function Footer() {
             <FooterLink to='/'>Twitter</FooterLink>
           </FooterLinkItems>
         </FooterLinksWrapper>
-      </FooterLinksContainer>
+      </FooterLinksContainer> */}
       <SocialMedia>
         <SocialMediaWrap>
           <SocialLogo to='/'>
