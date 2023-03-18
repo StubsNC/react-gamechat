@@ -10,7 +10,6 @@ export const homeObjOne = {
     'The ultimate web service for gamers! With GameChat, you can quickly and easily create stunning montages from your game clips and share them with your friends.',
   buttonLabel: 'Join the Beta',
   imgStart: '',
-  img: require('../../images/VideoPlayer.svg'),
   alt: 'Credit Card',
   start: ''
 };

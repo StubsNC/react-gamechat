@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Button } from '../../globalStyles';
+import AnimatedSVG from '../../images/Animations/GamerAnimation';
 import {
   InfoSec,
   InfoRow,
@@ -46,9 +47,13 @@ function InfoSection({
               </TextWrapper>
             </InfoColumn>
             <InfoColumn>
-              <ImgWrapper start={start}>
-                <Img src={img} alt={alt} />
-              </ImgWrapper>
+                {img ? (
+                  <ImgWrapper start={start}>
+                    <Img src={img} alt={alt} />
+                  </ImgWrapper>
+                ) : (
+                  <AnimatedSVG style={{ width: '500px', height: '500px' }} />
+                )}  
             </InfoColumn>
           </InfoRow>
         </Container>

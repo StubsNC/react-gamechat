@@ -109,6 +109,7 @@ function Footer() {
           </SocialIcons>
         </SocialMediaWrap>
       </SocialMedia>
+      
     </FooterContainer>
   );
 }
