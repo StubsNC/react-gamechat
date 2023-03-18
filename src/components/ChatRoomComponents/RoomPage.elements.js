@@ -2,8 +2,14 @@ import styled from 'styled-components';
 
 export const RoomSec = styled.div`
     color: #f4f5fc;
-    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 75vh;
+    
     background: ${({ lightBg }) => (lightBg ? '#f4f5fc' : '#24293e')};
+    
 `;
 
 export const RoomContainer = styled.div`

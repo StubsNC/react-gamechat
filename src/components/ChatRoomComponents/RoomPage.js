@@ -16,6 +16,8 @@ function Room() {
   const [isAuth, setIsAuth] = useState(cookies.get("auth-token"))
   const [room, setRoom] = useState(null)
   const roomInputRef = useRef(null)
+  
+  const placeholder = 'Room Key'
 
   if (!isAuth) {
     return (
@@ -35,12 +37,12 @@ function Room() {
             <RoomContainer>
               <RoomComponent>
                 <RoomSubHeading>
-                  Join our exclusive membership to receive the latest news and trends
+                  Join an existing Room or Create your Own
                 </RoomSubHeading>
                 <RoomSubText>Remember to be careful of who you share your room key with!</RoomSubText>
                 <RoomForm >
                   <FormInput type="text" ref={roomInputRef} />
-                  <Button fontBig type="button" onClick={() => setRoom(roomInputRef.current.value)}>
+                  <Button fontBig type="button" placeholder={placeholder} onClick={() => setRoom(roomInputRef.current.value)}>
                     Enter Chat
                   </Button>
                 </RoomForm>

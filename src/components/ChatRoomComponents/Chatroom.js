@@ -7,6 +7,7 @@ import MessagesList from './MessagesList';
 import Header from './Header';
 import ChatForm from './ChatForm';
 import ChatModal from './ChatModal';
+import { ChatRoomContainer, HeaderContainer, MessageListContainer } from './ChatRoom.elements';
 
 const ChatRoom = (props) => {
     const { room } = props;
@@ -18,7 +19,6 @@ const ChatRoom = (props) => {
 
     const textMessage = 'textMessage'
     const messagesRef = collection(db, "messagesChat");
-    const videoRef = collection(db, "messageChat")
 
     useEffect(() => {
         const queryMessages = query(
@@ -32,7 +32,6 @@ const ChatRoom = (props) => {
                 messages.push({ ...doc.data(), id: doc.id })
             })
             setMessages(messages)
-            console.log(messages)
         })
         return () => unsubscribe();
     }, [room])
@@ -58,15 +57,17 @@ const ChatRoom = (props) => {
     }, [messages])
 
     return (
-        <div className="container mx-auto m-3 ">
-            
-            <Header room={room} />
-            
-            <ChatModal />
-            
-            <MessagesList messages={messages} videos={videos} gamertags={gamertags} messagesEndRef={messagesEndRef} />
-            
-            <ChatForm handleSubmit={handleSubmit} newMessage={newMessage} setNewMessage={setNewMessage} />
+        <div >
+            <ChatRoomContainer>
+                <HeaderContainer>
+                    <Header room={room} />
+                </HeaderContainer>
+                <ChatModal />
+                <MessageListContainer>
+                    <MessagesList messages={messages} messagesEndRef={messagesEndRef} />
+                    <ChatForm handleSubmit={handleSubmit} newMessage={newMessage} setNewMessage={setNewMessage} />
+                </MessageListContainer>
+            </ChatRoomContainer>
         </div>
     )
 }
