@@ -11,7 +11,8 @@ import {
   Heading,
   Subtitle,
   ImgWrapper,
-  Img
+  Img,
+  AnimationWrapper
 } from './InfoSection.elements';
 
 function InfoSection({
@@ -47,13 +48,15 @@ function InfoSection({
               </TextWrapper>
             </InfoColumn>
             <InfoColumn>
-                {img ? (
-                  <ImgWrapper start={start}>
-                    <Img src={img} alt={alt} />
-                  </ImgWrapper>
-                ) : (
+              {img ? (
+                <ImgWrapper start={start}>
+                  <Img src={img} alt={alt} />
+                </ImgWrapper>
+              ) : (
+                <AnimationWrapper>
                   <AnimatedSVG style={{ width: '500px', height: '500px' }} />
-                )}  
+                </AnimationWrapper>
+              )}
             </InfoColumn>
           </InfoRow>
         </Container>

@@ -80,3 +80,10 @@ export const Subtitle = styled.p`
   line-height: 24px;
   color: ${({ lightTextDesc }) => (lightTextDesc ? '#8ebbff' : '#24293e')};
 `;
+
+export const AnimationWrapper = styled.div`
+  @media screen and (max-width: 800px) {
+    width: 100%; // Adjust the width as needed
+    height: auto; // Adjust the height as needed
+  }
+`;
