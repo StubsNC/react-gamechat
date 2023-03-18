@@ -49,25 +49,33 @@ const ChatRoom = (props) => {
         setNewMessage("")
     }
 
-    useEffect(() => {
+    const scrollToBottom = () => {
         if (messagesEndRef.current) {
             messagesEndRef.current.scrollTop = messagesEndRef.current.scrollHeight
         }
-    }, [messages])
+    };
 
     return (
-        <div >
-            <ChatRoomContainer>
-                <ChatModal />
-                <MessageListContainer>
-                    <HeaderContainer>
-                        <Header room={room} />
-                    </HeaderContainer>
-                    <MessagesList messages={messages} messagesEndRef={messagesEndRef} />
-                    <ChatForm handleSubmit={handleSubmit} newMessage={newMessage} setNewMessage={setNewMessage} />
-                </MessageListContainer>
-            </ChatRoomContainer>
-        </div>
+        <div>
+        <ChatRoomContainer>
+            <ChatModal />
+            <MessageListContainer>
+                <HeaderContainer>
+                    <Header room={room} />
+                </HeaderContainer>
+                <MessagesList
+                    messages={messages}
+                    messagesEndRef={messagesEndRef}
+                    scrollToBottom={scrollToBottom}
+                />
+                <ChatForm
+                    handleSubmit={handleSubmit}
+                    newMessage={newMessage}
+                    setNewMessage={setNewMessage}
+                />
+            </MessageListContainer>
+        </ChatRoomContainer>
+    </div>
     )
 }
 
