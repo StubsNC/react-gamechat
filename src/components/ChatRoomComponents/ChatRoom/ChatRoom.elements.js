@@ -1,26 +1,27 @@
 import styled from 'styled-components';
 
 export const ChatRoomContainer = styled.div`
-    color: #f4f5fc;
-    padding: 30px 80px;
+    color: #24293e;
+    padding: 30px 80px; 
     background: ${({ lightBg }) => (lightBg ? '#f4f5fc' : '#24293e')};
     
 
 `;
 
 export const HeaderContainer = styled.header`
+    background: #8ebbff;
     text-align: center;
-    margin: 0 auto;
-    position: relative;
-    width: 2560px;
-    height: 54px;
-    position: relative;
-    margin-left: -1280px;
-    left: 50%;
+    width: 100%;
+    
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 `
 
 export const MessageListContainer = styled.div`
+    background: #fff;
     justify-content: center;
     align-items: center;
     border: solid 3px white;
+    border-radius: 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande','Lucida Sans', Arial, sans-serif;
 `;
+

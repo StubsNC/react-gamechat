@@ -9,6 +9,7 @@ import { CompatRouter } from "react-router-dom-v5-compat";
 import ScrollToTop from './components/ScrollToTop';
 import { Navbar, Footer } from './components';
 import Room from './components/ChatRoomComponents/RoomPage'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

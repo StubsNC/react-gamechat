@@ -2,12 +2,12 @@ import React, { useState, useRef } from "react";
 import { Auth } from "./Auth";
 import { Row, Col } from 'react-bootstrap';
 import { Container, Button } from "../../globalStyles";
-import { RoomSec, RoomRow, RoomColumn, RoomForm, RoomContainer, RoomSubHeading, RoomSubText, RoomComponent } from './RoomPage.elements'
+import { RoomSec, RoomRow, RoomColumn, RoomForm, RoomContainer, RoomSubHeading, RoomSubText, RoomComponent } from './RoomPage/RoomPage.elements'
 import { FooterSubHeading, FooterSubscription, FooterSubText } from "../Footer/Footer.elements";
 
 
 import Cookies from 'universal-cookie';
-import ChatRoom from "./Chatroom";
+import ChatRoom from "./ChatRoom/Chatroom";
 import { FormInput } from "../Footer/Footer.elements";
 const cookies = new Cookies()
 

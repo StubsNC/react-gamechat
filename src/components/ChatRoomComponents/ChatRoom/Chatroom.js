@@ -1,20 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { addDoc, collection, serverTimestamp, onSnapshot, query, where, orderBy, limitToLast } from 'firebase/firestore';
-import { db, auth } from './firebase-config';
-import { Button } from 'react-bootstrap';
-import { Link, Route, Routes, Outlet } from 'react-router-dom';
-import MessagesList from './MessagesList';
-import Header from './Header';
-import ChatForm from './ChatForm';
-import ChatModal from './ChatModal';
-import { ChatRoomContainer, HeaderContainer, MessageListContainer } from './ChatRoom.elements';
+import { db, auth } from '../firebase-config';
+
+import MessagesList from '../MessagesList/MessagesList';
+import Header from '../ChatRoomHeader/Header';
+import ChatForm from '../Chatform/ChatForm';
+import ChatModal from '../ChatModal';
+import { ChatRoomContainer, HeaderContainer, MessageListContainer, MessageFormContainer } from './ChatRoom.elements';
 
 const ChatRoom = (props) => {
     const { room } = props;
     const [newMessage, setNewMessage] = useState("");
     const [messages, setMessages] = useState([])
-    const [videos, setVideos] = useState([])
-    const [gamertags, setGamertags] = useState([])
+    
     const messagesEndRef = useRef(null)
 
     const textMessage = 'textMessage'
@@ -45,6 +43,7 @@ const ChatRoom = (props) => {
             text: newMessage,
             createdAt: serverTimestamp(),
             user: auth.currentUser.displayName,
+            photoURL: auth.currentUser.photoURL, // Add the photoURL property
             room,
         })
         setNewMessage("")
@@ -59,11 +58,11 @@ const ChatRoom = (props) => {
     return (
         <div >
             <ChatRoomContainer>
-                <HeaderContainer>
-                    <Header room={room} />
-                </HeaderContainer>
                 <ChatModal />
                 <MessageListContainer>
+                    <HeaderContainer>
+                        <Header room={room} />
+                    </HeaderContainer>
                     <MessagesList messages={messages} messagesEndRef={messagesEndRef} />
                     <ChatForm handleSubmit={handleSubmit} newMessage={newMessage} setNewMessage={setNewMessage} />
                 </MessageListContainer>

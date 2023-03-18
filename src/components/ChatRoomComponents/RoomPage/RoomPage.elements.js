@@ -6,10 +6,8 @@ export const RoomSec = styled.div`
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 75vh;
-    
-    background: ${({ lightBg }) => (lightBg ? '#f4f5fc' : '#24293e')};
-    
+    min-height: 65vh;
+    background: #24293e;
 `;
 
 export const RoomContainer = styled.div`
