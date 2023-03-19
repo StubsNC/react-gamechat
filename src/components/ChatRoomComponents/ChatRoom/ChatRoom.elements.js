@@ -12,7 +12,6 @@ export const HeaderContainer = styled.header`
     background: #8ebbff;
     text-align: center;
     width: 100%;
-    
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 `
 

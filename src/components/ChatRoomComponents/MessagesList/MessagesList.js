@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import './MessagesList.css'
 import { Container } from '../../../globalStyles';
 import { auth } from '../../../components/ChatRoomComponents/firebase-config';
-import { MessageBubble } from './MessageList.elements';
+
 
 const MessageList = ({ messages }) => {
     const currentUser = auth.currentUser.displayName;
@@ -19,7 +19,7 @@ const MessageList = ({ messages }) => {
         <Container ref={messagesEndRef} style={{ height: '70vh', overflowY: 'auto' }}>
             {messages.map((message) => (
                 <div
-                    className={`message mx-3 mb-3 ${message.user === currentUser ? 'current-user' : ''}`}
+                    className={` ${message.user === currentUser ? 'current-user' : ''}`}
                     key={message.id}
                 >
                     {message.public_url ? (

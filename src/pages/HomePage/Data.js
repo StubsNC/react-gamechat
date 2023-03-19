@@ -37,31 +37,15 @@ export const homeObjThree = {
   lightTopLine: false,
   lightText: false,
   lightTextDesc: false,
-  topLine: 'Sarah Jeni',
+  topLine: 'Christian Burke',
   headline:
-    'Ultra helped me increase my revenue by over 3X in less than 3 months!',
+    'Backend Developer',
   description:
-    "Their team is wonderful! I can't believe I didn't start working with them earlier.",
-  buttonLabel: 'View Case Study',
+    "We have created a quick and simple way for gamers to edit and share their clips with friends!",
+  buttonLabel: 'Join The Beta',
   imgStart: 'start',
   img: require('../../images/christianpic.png'),
   alt: 'Vault',
   start: 'true'
 };
 
-export const homeObjFour = {
-  primary: true,
-  lightBg: false,
-  lightTopLine: true,
-  lightText: true,
-  lightTextDesc: true,
-  topLine: 'Secure Database',
-  headline: 'All your data is stored on our secure server',
-  description:
-    'You will never have to worry about your information getting leaked. Our team of security experts will ensure your records are kept safe.',
-  buttonLabel: 'Sign Up Now',
-  imgStart: 'start',
-  img: require('../../images/svg-3.svg'),
-  alt: 'Vault',
-  start: 'true'
-};
